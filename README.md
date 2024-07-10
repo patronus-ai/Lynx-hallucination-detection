@@ -1,4 +1,4 @@
-# Patronus Finetuning
+# Lynx Hallucination Detection
 
 ### Setup
 Install local environment using pyenv and `.python-version`, `poetry.lock`, `pyproject.toml` files.
@@ -17,3 +17,17 @@ pre-commit install
 ```
 
 Copy `.env.example` to `.env` and replace values for environmental variables.
+
+
+### Communication
+
+* If you found a bug, open an issue.
+
+
+### Authors
+* [Rebecca Qian](https://www.linkedin.com/in/rebeccaqian/) - email: [rebecca@patronus.ai](mailto:rebecca@patronus.ai)
+* [Sunitha Ravi](https://www.linkedin.com/in/selvansunitha/) - email: [sunitha@patronus.ai](mailto:sunitha@patronus.ai)
+* [Bartosz Mielczarek](https://www.linkedin.com/in/bartosz-mielczarek-647346117/) - email: [bartek@patronus.ai](mailto:bartek@patronus.ai)
+
+
+Want to talk about LLM use cases, visit our webpage [PatronusAI](https://www.patronus.ai/).

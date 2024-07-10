@@ -31,7 +31,7 @@ compute:
 
 # The below is injected as a YAML file: /mnt/config/parameters.yaml
 parameters:
-  tokenizer_name: HF_TOKENIZER_PATH
+  tokenizer_name: HF_USER/HF_TOKENIZER_REPOSITORY_NAME
   max_seq_len: 8000
   global_seed: 17
 
@@ -140,6 +140,10 @@ parameters:
 
 #  loggers:
 #    wandb: {"project": "WANDB_PROJECT_NAME", "entity": "WANDB_ENTITY_NAME"}
+
+  save_interval: 1ep
+  save_num_checkpoints_to_keep: 1  # Important, this cleans up checkpoints saved to DISK
+  save_folder:  s3://S3_BUCKET_NAME/S3_FILEPATH
 
 #  # callbacks
 #  callbacks:
