@@ -10,7 +10,7 @@ integrations:
 # The following code operates within github repo structure and needs to be adjusted accordingly.
 # model_name_or_path can be either HF repository or local path
 command: |
-  cd GIT_REPO_NAME/configs/git_repo_example
+  cd GIT_REPO_NAME/mcli/git_repo_example
 
   accelerate launch --multi_gpu mcli_inference_v1.py \
     --model_name_or_path PatronusAI/Patronus-Lynx-8B-Instruct \

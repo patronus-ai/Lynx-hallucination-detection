@@ -42,7 +42,7 @@ We can use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to finetune any 
 6. To get [Weights and Biases](https://wandb.ai/) tracking, uncomment 'loggers' and `integration_type` sections of the `.yaml` file.
 7. Run inference using:
    ```
-   mcli run -f configs/lynx-70b-train.yaml
+   mcli run -f mcli/lynx-70b-train.yaml
    ```
 8. You can track your run by adding `--follow` parameter when executing `mcli run` or by using:
    ```

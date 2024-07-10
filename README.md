@@ -18,6 +18,12 @@ pre-commit install
 
 Copy `.env.example` to `.env` and replace values for environmental variables.
 
+### Contents
+- Inference and Finetuning setups on mcli and vLLM. Details:
+  - mcli/mcli_finetuning.md
+  - mcli/mcli_inference.md
+  - mcli/vllm_inference.md
+
 
 ### Communication
 

@@ -39,7 +39,7 @@ We can use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to run inference
      - `CLUSTER_NAME` - Cluster name provided on MCLI resources. Run `mcli get clusters` to get a list.
 5. Run inference using:
     ```
-    mcli run -f configs/lynx-8b-mcli-inference-v1.yaml
+    mcli run -f mcli/lynx-8b-mcli-inference-v1.yaml
     ```
 6. You can track your run by adding `--follow` parameter when executing `mcli run` or by using:
    ```
