@@ -6,20 +6,16 @@ integrations:
   ssh_clone: false  # Should be true if using a private repo
 
 # Add examples from "git_repo_example" folder to GitHub public (if private, change ssh_clone to True) repository.
-# Parameter details are included in the referenced mcli_inference_v2.py file.
+# Parameter details are included in the referenced mcli_inference_v1.py file.
 # The following code operates within github repo structure and needs to be adjusted accordingly.
 # model_name_or_path can be either HF repository or local path
 command: |
-  cd GIT_REPO_NAME/configs/git_repo_example
+  cd GIT_REPO_NAME/mcli/git_repo_example
 
-  accelerate launch --multi_gpu --num_processes 4 mcli_inference_v2.py \
-    --model_name_or_path PatronusAI/Patronus-Lynx-8B-Instruct \
+  accelerate launch --multi_gpu mcli_inference_v1.py \
+    --model_name_or_path PatronusAI/Patronus-Lynx-70B-Instruct \
     --test_ds_path HF_USER/HF_TEST_DATASET_REPOSITORY_NAME \
-    --batch_size 1 \
-    --pad_to_multiple_of 1 \
-    --hf_ds_split "test" \
     --max_new_tokens 2000 \
-    --max_token_count_message 4000 \
     --output_path HF_USER/HF_INFERENCE_DATASET_REPOSITORY_NAME
 
 env_variables:

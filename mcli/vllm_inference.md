@@ -1,6 +1,6 @@
 ## Inference with vLLM
 
-We use [vLLM](https://docs.vllm.ai/en/latest/getting_started/quickstart.html) to run inference for PatronusAI/Patronus-Lynx-70B-Instruct model. To setup inference with vLLM follow the steps below:
+We can use [vLLM](https://docs.vllm.ai/en/latest/getting_started/quickstart.html) to run inference for PatronusAI/Patronus-Lynx-70B-Instruct model. To setup inference with vLLM follow the steps below:
 
 1. Download model weights onto a local directory.
 2. Install vLLM (if not installed using the poetry package):

@@ -1,6 +1,6 @@
 ## Inference with mcli
 
-We use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to run inference for PatronusAI/Patronus-Lynx-70B-Instruct model. To setup inference with `mcli` follow the steps below:
+We can use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to run inference for PatronusAI/Patronus-Lynx-70B-Instruct model. To setup inference with `mcli` follow the steps below:
 
 1. Install library package provided in `pyproject.toml` and `poetry.lock`. Follow instructions in `README.md` file.
 2. Add necessary secret integrations according to documentation:
@@ -18,8 +18,13 @@ We use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to run inference for
         num_rows: 1000
     })
    })
+   
+   Where row can look like:
+   "LABEL": "label-1"
+   "_id": "id-1"
+   "messages": [{"role": "user", "content": "Who are you?"}]
    ```
-4. To run inference, select one of the following .yaml files and fill the following parameter values:
+4. To run inference, select one of the following `.yaml` files and fill the following parameter values:
    - files:
      - `lynx-8b-mcli-inference-v1.yaml`
      - `lynx-8b-mcli-inference-v2.yaml`
@@ -34,25 +39,14 @@ We use [Mosaic CLI](https://pypi.org/project/mosaicml-cli/) to run inference for
      - `CLUSTER_NAME` - Cluster name provided on MCLI resources. Run `mcli get clusters` to get a list.
 5. Run inference using:
     ```
-    mcli run -f configs/lynx-8b-mcli-inference-v1.yaml
+    mcli run -f mcli/lynx-8b-mcli-inference-v1.yaml
     ```
-
-If you want to run online inference using the model, you can bring up the model server using:
-
-```
-python -m vllm.entrypoints.openai.api_server \
---model llama-3-70b --tensor-parallel-size 8
-```
-
-and query the endpoint:
-
-```
-curl http://localhost:8000/v1/chat/completions \
-     -H "Content-Type: application/json" \
-     -d '{
-     "model": "llama-3-70b",
-     "messages": [
-         {"role": "user", "content": "You are a helpful assistant.Who won the world series in 2020?"},
-     ]
-}'
-```
+6. You can track your run by adding `--follow` parameter when executing `mcli run` or by using:
+   ```
+   mcli get runs --limit 20   
+   ```
+7. You can access logs by using:
+   ```
+   mcli logs {RUN_NAME}
+   ```
+   
